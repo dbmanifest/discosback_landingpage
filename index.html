@@ -3,7 +3,31 @@
 
 <head>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-
+    <style>
+        /* Hide dropdown menu by default */
+        #dropdown-menu {
+            display: none;
+        }
+    
+        /* Show regular menu on screens larger than 768px */
+        @media (min-width: 768px) {
+            #menu-toggle {
+                display: none;
+            }
+        }
+    </style>
+    
+    <script>
+        // Toggle dropdown menu
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('dropdown-menu');
+            if (menu.style.display === 'none' || menu.style.display === '') {
+                menu.style.display = 'block';
+            } else {
+                menu.style.display = 'none';
+            }
+        });
+    </script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             // Get the links and sections
@@ -44,8 +68,23 @@
     <header class="bg-white py-4">
         <div class="container mx-auto flex justify-between items-center">
             <img src="logo.png" alt="DISCO logo" class="w-16">
-            <nav>
+            <nav class="hidden md:flex">
                 <ul class="flex space-x-4">
+                    <li><a href="#home" class="text-black">Home</a></li>
+                    <li><a href="https://beta.discosback.tech" class="text-black">Beta</a></li>
+                    <li><a href="https://shop.discosback.tech" class="text-black">Shop</a></li>
+                    <li><a href="#faq" class="text-black">FAQ</a></li>
+                    <li><a href="#roadmap" class="text-black">Roadmap</a></li>
+                    <li><a href="#team" class="text-black">Team</a></li>
+                    <li><a href="#contact" class="text-black">Contact</a></li>
+                </ul>
+            </nav>
+                 <!-- Dropdown button for smaller screens -->
+        <button id="menu-toggle" class="md:hidden px-2 py-1">
+            <i class="fas fa-bars"></i>
+        </button>
+            <nav id="dropdown-menu" class="absolute top-full left-0 w-64 mt-2 bg-white shadow-lg md:hidden">
+                <ul class="flex flex-col space-y-2 p-4">
                     <li><a href="#home" class="text-black">Home</a></li>
                     <li><a href="https://beta.discosback.tech" class="text-black">Beta</a></li>
                     <li><a href="https://shop.discosback.tech" class="text-black">Shop</a></li>
@@ -61,7 +100,7 @@
     <!-- Hero Section -->
     <section class="text-white py-20" style="background-image: url('https://source.unsplash.com/featured/1280x720/?ai');">
         <div class="container mx-auto px-4">
-            <h1 class="text-4xl font-bold mb-6">DISCO - We're Bringing DISCO Back!!</h1>
+            <h1 class="text-4xl font-bold mb-6">Bringing DISCO Back!!</h1>
             <p class="text-xl mb-8">Local AI Boxes ( GPT @ Home ) </p>
             <a href="https://shop.discosback.tech" class="bg-white text-purple-500 py-2 px-6 rounded-full shadow-lg font-semibold uppercase tracking-wide">Shop Now</a>
         </div>
@@ -72,25 +111,25 @@
     <section class="bg-gray-100 py-20" id="main-content">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                <div class="bg-white p-6 rounded-lg shadow-lg">
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
                     <i class="fas fa-home text-4xl text-purple mb-4 text-center"></i>
                     <h2 class="text-2xl font-semibold mb-4 text-center"> ChatGPT @ Home </h2>
                     <p class="text-gray-700 font-semibold text-center">Leverage a Private model to train Your AIGents on your own data with unlimited plugins!</p>
                     <a href="docs.discosback.tech" class="text-center bg-purple-500 text-white py-2 px-6 rounded-full mt-6 inline-block font-semibold">Learn More</a>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg">
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
                     <i class="fas fa-home text-4xl text-purple mb-4 text-center"></i>
                     <h2 class="text-2xl font-semibold mb-4 text-center">PLEX Intergration</h2>
                     <p class="text-gray-700 font-semibold text-center">Convert your physical media collection into a digital library with our PLEX Boxes. Stream movies, TV shows, and music from any device, anytime.</p>
                     <a href="docs.discosback.tech" class="text-center bg-purple-500 text-white py-2 px-6 rounded-full mt-6 inline-block font-semibold">Learn More</a>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg">
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
                     <i class="fas fa-home text-4xl text-purple mb-4 text-center"></i>
                     <h2 class="text-2xl font-semibold mb-4 text-center">Live Ad & Tracker Free</h2>
                     <p class="text-gray-700 font-semibold text-center">Enhance your network security and browsing experience with our PiHole integration. Say goodbye to annoying ads and protect your devices, at home and on the go!</p>
                     <a href="docs.discosback.tech" class="text-center bg-purple-500 text-white py-2 px-6 rounded-full mt-6 inline-block font-semibold">Learn More</a>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg">
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
                     <i class="fas fa-home text-4xl text-purple mb-4 text-center"></i>
                     <h2 class="text-2xl font-semibold mb-4 text-center">Home Automation Intergrations</h2>
                     <p class="text-gray-700 font-semibold text-center">Manage your home devices remotely or with Alexa using our Home-Assistant.io Intergration.</p>
@@ -132,15 +171,15 @@
             <h2 class="text-2xl text-white mb-8 font-semibold">Frequently Asked Questions</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 <div>
-                    <h3 class="text-white font-semibold mb-4">Why Not Use Chat GPT?</h3>
+                    <h3 class="text-black font-semibold mb-4">Why Not Use Chat GPT?</h3>
                     <p class="text-white mb-8 font-semibold"><ul><li class="text-white font-semibold mb-4">OpenAI forces a <a href="#">choice</a> between your chat history and your privacy</li><li class="text-white font-semibold mb-4">DISCO provides a local long term memory for your agents</li><li class="text-white font-semibold mb-4">With DISCO's Alexa, Google Assistant & Home-Assistant.io intergrations, you have the power of a full service LLM assistant </li><li class="text-white font-semibold mb-4">Multi-Agent Support</li><li class="text-white font-semibold mb-4">Roadmap To Tokenized AI Economy!</li><li class="text-white font-semibold mb-4">And Much More...</li></ul></p>
-                    <h3 class="text-white font-semibold mb-4">Is There A Monthly Cost?</h3>
+                    <h3 class="text-black font-semibold mb-4">Is There A Monthly Cost?</h3>
                     <p class="text-white mb-8 font-semibold ">If you purchase a DISCOBall to run a LLM model, or bring your own hardware to run a model, then no! Otherwise, you will have to pay an operator for access to their model. DISCO will operate a portion of these models accessible through an API </p>
                 </div>
                 <div>
-                    <h3 class="text-white font-semibold mb-4">Your Roadmap Mentions A Future Plan For Tokenization, is this a crypto scam?</h3>
+                    <h3 class="text-black font-semibold mb-4">Your Roadmap Mentions A Future Plan For Tokenization, is this a crypto scam?</h3>
                     <p class="text-white mb-8 font-semibold ">Our tokenization plans are for the consumers benefit, to distribute the benefits of the furthcoming automation economy for the benefit of all.</p>
-                    <h3 class="text-white font-semibold mb-4">I Already Run A Model, Do I Have To Buy DISCO Equipment?</h3>
+                    <h3 class="text-black font-semibold mb-4">I Already Run A Model, Do I Have To Buy DISCO Equipment?</h3>
                     <p class="text-white mb-8 font-semibold ">No! If you currently run a LLAMA/LLAMA2 Model On Local/Cloud Hardware, You Can Intergrate Into Our Software Directly </p>
                 </div>
             </div>
