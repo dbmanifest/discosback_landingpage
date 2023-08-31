@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Get the links and sections
+            const sections = ['home', 'faq', 'roadmap', 'contact'];
+            sections.forEach(section => {
+                const link = document.querySelector(`nav ul li a[href="#${section}"]`);
+                const sectionElement = document.getElementById(`${section}-section`);
+
+                // Add click event listener to the link
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    sections.forEach(s => {
+                        document.getElementById(`${s}-section`).style.display = 'none';
+                    });
+                    sectionElement.style.display = 'block';
+                });
+            });
+        });
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.3/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Additional custom CSS can be placed here */
+    </style>
+    <title>DISCO - We're Bringing DISCO Back!!</title>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="bg-purple-500 py-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <img src="logo.png" alt="DISCO logo" class="w-16">
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="#home" class="text-white">Home</a></li>
+                    <li><a href="https://beta.discosback.tech" class="text-white">Beta</a></li>
+                    <li><a href="https://shop.discosback.tech" class="text-white">Shop</a></li>
+                    <li><a href="#faq" class="text-white">FAQ</a></li>
+                    <li><a href="#roadmap" class="text-white">Roadmap</a></li>
+                    <li><a href="#contact" class="text-white">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="text-white py-20" style="background-image: url('https://source.unsplash.com/featured/1280x720/?ai');">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl font-bold mb-6">DISCO - We're Bringing DISCO Back!!</h1>
+            <p class="text-xl mb-8">Local AI Boxes ( GPT @ Home ) </p>
+            <a href="#" class="bg-white text-purple-500 py-2 px-6 rounded-full shadow-lg font-semibold uppercase tracking-wide">Get Started</a>
+        </div>
+    </section>
+
+    <!-- Feature Section -->
+    <section class="bg-white py-20" id="main-content">
+        <div class="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            <div class="max-w-sm mx-auto bg-purple-500 p-6 rounded-lg shadow-lg">
+                <i class="fas fa-box-open text-4xl text-white mb-4"></i>
+                <h2 class="text-xl font-semibold mb-4">PLEX Home Entertainment Intergation</h2>
+                <p class="text-gray-700">Convert physical media to digital format with our optional conversion service.</p>
+                <a href="docs.discosback.tech" class="bg-white text-purple-500 py-2 px-6 rounded-full shadow-lg mt-6 inline-block font-semibold">Learn More</a>
+            </div>
+            <div class="max-w-sm mx-auto bg-purple-500 p-6 rounded-lg shadow-lg">
+                <i class="fas fa-shield-alt text-4xl text-white mb-4"></i>
+                <h2 class="text-xl font-semibold mb-4">PiHole</h2>
+                <p class="text-gray-700">Block ads and protect your network with our PiHole integration.</p>
+                <a href="docs.discosback.tech" class="bg-white text-purple-500 py-2 px-6 rounded-full shadow-lg mt-6 inline-block font-semibold">Learn More</a>
+            </div>
+            <div class="max-w-sm mx-auto bg-purple-500 p-6 rounded-lg shadow-lg">
+                <i class="fas fa-home text-4xl text-white mb-4"></i>
+                <h2 class="text-xl font-semibold mb-4">Home Automation</h2>
+                <p class="text-gray-700">Manage your home devices remotely or with Alexa using our Home-Assistant.io Intergration.</p>
+                <a href="#" class="bg-white text-purple-500 py-2 px-6 rounded-full shadow-lg mt-6 inline-block font-semibold">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Individual Feature Sections -->
+    <section class="bg-gray-100 py-20">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <img src="https://source.unsplash.com/featured/1280x720/?plex" alt="PLEX" class="float-left w-40 h-40 object-cover rounded-full">
+                    <h2 class="text-2xl font-semibold mb-4">PLEX Intergration</h2>
+                    <p class="text-gray-700">Convert your physical media collection into a digital library with our PLEX Boxes. Stream movies, TV shows, and music from any device, anytime.</p>
+                    <a href="#" class="bg-purple-500 text-white py-2 px-6 rounded-full mt-6 inline-block font-semibold">Learn More</a>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <img src="https://source.unsplash.com/featured/1280x720/?pihole" alt="PiHole" class="float-right w-40 h-40 object-cover rounded-full">
+                    <h2 class="text-2xl font-semibold mb-4">PiHole</h2>
+                    <p class="text-gray-700">Enhance your network security and browsing experience with our PiHole integration. Say goodbye to annoying ads and protect your devices, at home and on the go!</p>
+                    <a href="#" class="bg-purple-500 text-white py-2 px-6 rounded-full mt-6 inline-block font-semibold">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="bg-purple-500 py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl text-white mb-8">What Our Customers Say</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                <div class="max-w-sm mx-auto bg-white p-6 rounded-lg shadow-lg">
+                    <blockquote class="text-gray-900">
+                        <p class="text-xl mb-4">"DISCO's local AI solutions have revolutionized my workflow. The reliability and performance are unparalleled."</p>
+                    </blockquote>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Customer 1" class="w-12 h-12 rounded-full">
+                        <div class="ml-4">
+                            <h3 class="text-lg font-semibold">John Doe</h3>
+                            <p class="text-gray-700">CEO, Tech Start-up</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="max-w-sm mx-auto bg-white p-6 rounded-lg shadow-lg">
+                    <blockquote class="text-gray-900">
+                        <p class="text-xl mb-4">"The DISCO team is fantastic! They have excellent technical knowledge and great customer support."</p>
+                    </blockquote>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="Customer 2" class="w-12 h-12 rounded-full">
+                        <div class="ml-4">
+                            <h3 class="text-lg font-semibold">Jane Smith</h3>
+                            <p class="text-gray-700">CTO, Software Company</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="bg-purple-500 py-20" id="faq-section">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl text-white mb-8">Frequently Asked Questions</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Question 1</h3>
+                    <p class="text-gray-200 mb-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <h3 class="text-white font-semibold mb-4">Question 2</h3>
+                    <p class="text-gray-200 mb-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Question 3</h3>
+                    <p class="text-gray-200 mb-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <h3 class="text-white font-semibold mb-4">Question 4</h3>
+                    <p class="text-gray-200 mb-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap Section -->
+    <section class="bg-gray-100 py-20" id="roadmap-section">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl text-center font-semibold mb-8">Our Roadmap</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold mb-4">Phase 1</h3>
+                    <p class="text-gray-700 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold mb-4">Phase 2</h3>
+                    <p class="text-gray-700 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold mb-4">Phase 3</h3>
+                    <p class="text-gray-700 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FAQ Section -->
+    <section class="bg-purple-500 py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl text-white mb-8">Frequently Asked Questions</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Question 1</h3>
+                    <p class="text-gray-200 mb-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <h3 class="text-white font-semibold mb-4">Question 2</h3>
+                    <p class="text-gray-200 mb-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Question 3</h3>
+                    <p class="text-gray-200 mb-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <h3 class="text-white font-semibold mb-4">Question 4</h3>
+                    <p class="text-gray-200 mb-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="bg-gray-100 py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl text-center font-semibold mb-8">Meet Our Team</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="Team Member 1" class="w-40 h-40 object-cover rounded-full mx-auto mb-4">
+                    <h3 class="text-xl font-semibold mb-2">John Doe</h3>
+                    <p class="text-gray-700">CEO</p>
+                    <div class="mt-4 flex justify-center space-x-2">
+                        <a href="#" class="text-purple-500"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-purple-500"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-purple-500"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <img src="https://randomuser.me/api/portraits/women/4.jpg" alt="Team Member 2" class="w-40 h-40 object-cover rounded-full mx-auto mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Jane Smith</h3>
+                    <p class="text-gray-700">CTO</p>
+                    <div class="mt-4 flex justify-center space-x-2">
+                        <a href="#" class="text-purple-500"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-purple-500"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-purple-500"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <img src="https://randomuser.me/api/portraits/men/5.jpg" alt="Team Member 3" class="w-40 h-40 object-cover rounded-full mx-auto mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Mike Johnson</h3>
+                    <p class="text-gray-700">Lead Developer</p>
+                    <div class="mt-4 flex justify-center space-x-2">
+                        <a href="#" class="text-purple-500"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-purple-500"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-purple-500"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <img src="https://randomuser.me/api/portraits/women/6.jpg" alt="Team Member 4" class="w-40 h-40 object-cover rounded-full mx-auto mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Emily Brown</h3>
+                    <p class="text-gray-700">Lead Designer</p>
+                    <div class="mt-4 flex justify-center space-x-2">
+                        <a href="#" class="text-purple-500"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-purple-500"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-purple-500"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Subscription Section -->
+    <section class="bg-purple-500 py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl text-white text-center mb-4">Subscribe to Our Newsletter</h2>
+            <p class="text-gray-200 text-center mb-8">Get the latest updates and news directly to your inbox.</p>
+            <div class="flex justify-center">
+                <form class="w-full max-w-sm">
+                    <div class="flex items-center border-b border-b-2 border-purple-200 py-2">
+                        <input class="appearance-none bg-transparent border-none w-full text-white mr-3 py-1 px-2 leading-tight focus:outline-none" type="email" placeholder="Enter your email">
+                        <button class="flex-shrink-0 bg-white text-purple-500 py-2 px-4 rounded-full font-semibold" type="submit">
+                            Subscribe
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="bg-gray-100 py-20" id="contact-section">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl text-center font-semibold mb-8">Contact Us</h2>
+            <div class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-lg">
+                <form>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
+                            Name
+                        </label>
+                        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" placeholder="Enter your name">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+                            Email
+                        </label>
+                        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" placeholder="Enter your email">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="message">
+                            Message
+                        </label>
+                        <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="message" rows="5" placeholder="Enter your message"></textarea>
+                    </div>
+                    <div class="flex justify-center">
+                        <button class="bg-purple-500 text-white py-2 px-6 rounded-full mt-4 font-semibold" type="submit">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <div id="map" style="height: 400px;"></div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-800 py-4">
+        <div class="container mx-auto text-center text-white">
+            <ul class="flex justify-center space-x-4">
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+            </ul>
+            <p class="mt-2">DISCO &#169; 2021. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- CDN for required JavaScript files -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.4.1/dist/glide.min.js"></script>
+    <script>
+        // Additional custom JS can be placed here
+    </script>
+</body>
+
+</html>
