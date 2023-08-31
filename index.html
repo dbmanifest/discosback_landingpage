@@ -7,10 +7,15 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             // Get the links and sections
-            const sections = ['home', 'faq', 'roadmap', 'contact','team'];
+            const sections = ['home', 'faq', 'roadmap', 'contact', 'team'];
             sections.forEach(section => {
                 const link = document.querySelector(`nav ul li a[href="#${section}"]`);
                 const sectionElement = document.getElementById(`${section}-section`);
+
+                // Initially hide all sections except 'home'
+                if (section !== 'home') {
+                    sectionElement.style.display = 'none';
+                }
 
                 // Add click event listener to the link
                 link.addEventListener('click', function(e) {
@@ -67,35 +72,58 @@
     <section class="bg-gray-100 py-20" id="main-content">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
-            <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <i class="fas fa-home text-4xl text-white mb-4"></i>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <i class="fas fa-home text-4xl text-purple mb-4"></i>
                     <h2 class="text-2xl font-semibold mb-4"> ChatGPT @ Home </h2>
                     <p class="text-gray-700">Leverage a Private model to train Your AIGents on your own data with unlimited plugins!</p>
                     <a href="docs.discosback.tech" class="bg-purple-500 text-white py-2 px-6 rounded-full mt-6 inline-block font-semibold">Learn More</a>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <i class="fas fa-home text-4xl text-white mb-4"></i>
+                    <i class="fas fa-home text-4xl text-purple mb-4"></i>
                     <h2 class="text-2xl font-semibold mb-4">PLEX Intergration</h2>
                     <p class="text-gray-700">Convert your physical media collection into a digital library with our PLEX Boxes. Stream movies, TV shows, and music from any device, anytime.</p>
                     <a href="docs.discosback.tech" class="bg-purple-500 text-white py-2 px-6 rounded-full mt-6 inline-block font-semibold">Learn More</a>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <i class="fas fa-home text-4xl text-white mb-4"></i>
+                    <i class="fas fa-home text-4xl text-purple mb-4"></i>
                     <h2 class="text-2xl font-semibold mb-4">Live Ad & Tracker Free</h2>
                     <p class="text-gray-700">Enhance your network security and browsing experience with our PiHole integration. Say goodbye to annoying ads and protect your devices, at home and on the go!</p>
                     <a href="docs.discosback.tech" class="bg-purple-500 text-white py-2 px-6 rounded-full mt-6 inline-block font-semibold">Learn More</a>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <i class="fas fa-home text-4xl text-white mb-4"></i>
-                    <h2 class="text-xl font-semibold mb-4">Home Automation Intergrations</h2>
+                    <i class="fas fa-home text-4xl text-purple mb-4"></i>
+                    <h2 class="text2-xl font-semibold mb-4">Home Automation Intergrations</h2>
                     <p class="text-gray-700">Manage your home devices remotely or with Alexa using our Home-Assistant.io Intergration.</p>
-                    <a href="docs.discosback.tech" class="bg-white text-purple-500 py-2 px-6 rounded-full shadow-lg mt-6 inline-block font-semibold">Learn More</a>
+                    <a href="docs.discosback.tech" class="bg-purple-500 text-white py-2 px-6 rounded-full mt-6 inline-block font-semibold">Learn More</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonial Section -->
+    <!-- Roadmap Section -->
+    <section class="bg-gray-100 py-20" id="roadmap-section">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl text-center font-semibold mb-8">Our Roadmap</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold mb-4">Phase 1 (Current)</h3>
+                    <p class="text-gray-700 mb-4">Private Beta</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold mb-4">Phase 2</h3>
+                    <p class="text-gray-700 mb-4">Public Release Of The DISCOBall V1 & Access To DISCO Software + Intergrations</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold mb-4">Phase 3</h3>
+                    <p class="text-gray-700 mb-4">Building a distributed network of tokenized llms, enabling consumers to be rewarded for providing distributed secure access to their DISCOBall for LLM Computations  </p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold mb-4">Phase 4</h3>
+                    <p class="text-gray-700 mb-4">DISCO's Ultimate Goal Is To Build A First Of It's Kind Distributed MultiGated Mixture Of Experts Model. (See Documentation) </p>
+                </div>
+            </div>
+        </div>
+    </section>
  
 
     <!-- FAQ Section -->
@@ -105,25 +133,25 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 <div>
                     <h3 class="text-white font-semibold mb-4">Why Not Use Chat GPT?</h3>
-                    <p class="text-gray-200 mb-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <p class="text-gray-200 mb-8"><ul><li>OpenAI forces a <a href="#">choice</a> between your chat history and your privacy</li><li>DISCO provides a local long term memory for your agents</li><li>With DISCO's Alexa, Google Assistant & Home-Assistant.io intergrations, you have the power of a full service LLM assistant </li><li>Multi-Agent Support</li><li>Roadmap To Tokenized AI Economy!</li><li>And Much More...</li></ul></p>
                     <h3 class="text-white font-semibold mb-4">Is There A Monthly Cost?</h3>
-                    <p class="text-gray-200 mb-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <p class="text-gray-200 mb-8">If you purchase a DISCOBall to run a LLM model, or bring your own hardware to run a model, then no! Otherwise, you will have to pay an operator for access to their model. DISCO will operate a portion of these models accessible through an API </p>
                 </div>
                 <div>
                     <h3 class="text-white font-semibold mb-4">Your Roadmap Mentions A Future Plan For Tokenization, is this a crypto scam?</h3>
-                    <p class="text-gray-200 mb-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <h3 class="text-white font-semibold mb-4">Do I Have To Buy DISCO Equipment?</h3>
-                    <p class="text-gray-200 mb-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <p class="text-gray-200 mb-8">Our tokenization plans are for the consumers benefit, to distribute the benefits of the furthcoming automation economy for the benefit of all.</p>
+                    <h3 class="text-white font-semibold mb-4">I Already Run A Model, Do I Have To Buy DISCO Equipment?</h3>
+                    <p class="text-gray-200 mb-8">No! If you currently run a LLAMA/LLAMA2 Model On Local/Cloud Hardware, You Can Intergrate Into Our Software Directly </p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Team Section -->
-    <section class="bg-gray-100 py-20">
+    <section class="bg-gray-100 py-20" id="team-section">
         <div class="container mx-auto px-4">
             <h2 class="text-2xl text-center font-semibold mb-8">Meet Our Team</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-center">
                 <div class="bg-white p-6 rounded-lg shadow-lg">
                     <img src="" alt="" class="w-40 h-40 object-cover rounded-full mx-auto mb-4">
                     <h3 class="text-xl font-semibold mb-2">TAB</h3>
@@ -198,12 +226,6 @@
         </div>
     </section>
 
-    <!-- Map Section -->
-    <section class="py-20">
-        <div class="container mx-auto px-4">
-            <div id="map" style="height: 400px;"></div>
-        </div>
-    </section>
 
     <!-- Footer Section -->
     <footer class="bg-gray-800 py-4">
