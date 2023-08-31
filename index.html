@@ -67,7 +67,7 @@
     <!-- Header Section -->
     <header class="bg-white py-4">
         <div class="container mx-auto flex justify-between items-center">
-            <img src="logo.png" alt="DISCO logo" class="w-16">
+            <img src="logo.png" alt="DISCO logo" class="w-20 h-20">
             <nav class="hidden md:flex">
                 <ul class="flex space-x-4">
                     <li><a href="#home" class="text-black">Home</a></li>
@@ -171,15 +171,15 @@
             <h2 class="text-2xl text-white mb-8 font-semibold">Frequently Asked Questions</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 <div>
-                    <h3 class="text-black font-semibold mb-4">Why Not Use Chat GPT?</h3>
+                    <h3 class="text-black text-xl font-semibold mb-4">Why Not Use Chat GPT?</h3>
                     <p class="text-white mb-8 font-semibold"><ul><li class="text-white font-semibold mb-4">OpenAI forces a <a href="#">choice</a> between your chat history and your privacy</li><li class="text-white font-semibold mb-4">DISCO provides a local long term memory for your agents</li><li class="text-white font-semibold mb-4">With DISCO's Alexa, Google Assistant & Home-Assistant.io intergrations, you have the power of a full service LLM assistant </li><li class="text-white font-semibold mb-4">Multi-Agent Support</li><li class="text-white font-semibold mb-4">Roadmap To Tokenized AI Economy!</li><li class="text-white font-semibold mb-4">And Much More...</li></ul></p>
-                    <h3 class="text-black font-semibold mb-4">Is There A Monthly Cost?</h3>
+                    <h3 class="text-black text-xl font-semibold mb-4">Is There A Monthly Cost?</h3>
                     <p class="text-white mb-8 font-semibold ">If you purchase a DISCOBall to run a LLM model, or bring your own hardware to run a model, then no! Otherwise, you will have to pay an operator for access to their model. DISCO will operate a portion of these models accessible through an API </p>
                 </div>
                 <div>
-                    <h3 class="text-black font-semibold mb-4">Your Roadmap Mentions A Future Plan For Tokenization, is this a crypto scam?</h3>
+                    <h3 class="text-black text-xl font-semibold mb-4">Your Roadmap Mentions A Future Plan For Tokenization, is this a crypto scam?</h3>
                     <p class="text-white mb-8 font-semibold ">Our tokenization plans are for the consumers benefit, to distribute the benefits of the furthcoming automation economy for the benefit of all.</p>
-                    <h3 class="text-black font-semibold mb-4">I Already Run A Model, Do I Have To Buy DISCO Equipment?</h3>
+                    <h3 class="text-black text-xl font-semibold mb-4">I Already Run A Model, Do I Have To Buy DISCO Equipment?</h3>
                     <p class="text-white mb-8 font-semibold ">No! If you currently run a LLAMA/LLAMA2 Model On Local/Cloud Hardware, You Can Intergrate Into Our Software Directly </p>
                 </div>
             </div>
@@ -233,9 +233,9 @@
             <h2 class="text-2xl text-white text-center mb-4">Subscribe to Our Newsletter</h2>
             <p class="text-gray-200 text-center mb-8">Get the latest updates and news directly to your inbox.</p>
             <div class="flex justify-center">
-                <form class="w-full max-w-sm">
+                <form action="https://formspree.io/f/mvojrodb" method="POST" class="w-full max-w-sm">
                     <div class="flex items-center border-b border-b-2 border-purple-200 py-2">
-                        <input class="appearance-none bg-transparent border-none w-full text-white mr-3 py-1 px-2 leading-tight focus:outline-none" type="email" placeholder="Enter your email">
+                        <input name="email" class="appearance-none bg-transparent border-none w-full text-white mr-3 py-1 px-2 leading-tight focus:outline-none" type="email" placeholder="Enter your email">
                         <button class="flex-shrink-0 bg-white text-purple-500 py-2 px-4 rounded-full font-semibold" type="submit">
                             Subscribe
                         </button>
@@ -250,24 +250,24 @@
         <div class="container mx-auto px-4">
             <h2 class="text-2xl text-center font-semibold mb-8">Contact Us</h2>
             <div class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-lg">
-                <form>
+                <form action="https://formspree.io/f/mrgwkgro" method="POST">
                     <div class="mb-4">
                         <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
                             Name
                         </label>
-                        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" placeholder="Enter your name">
+                        <input name="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" placeholder="Enter your name">
                     </div>
                     <div class="mb-4">
                         <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
                             Email
                         </label>
-                        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" placeholder="Enter your email">
+                        <input name="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" placeholder="Enter your email">
                     </div>
                     <div class="mb-4">
                         <label class="block text-gray-700 text-sm font-bold mb-2" for="message">
                             Message
                         </label>
-                        <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="message" rows="5" placeholder="Enter your message"></textarea>
+                        <textarea name="message" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="message" rows="5" placeholder="Enter your message"></textarea>
                     </div>
                     <div class="flex justify-center">
                         <button class="bg-purple-500 text-white py-2 px-6 rounded-full mt-4 font-semibold" type="submit">Send Message</button>
